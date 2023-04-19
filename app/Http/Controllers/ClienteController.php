@@ -17,6 +17,7 @@ class ClienteController extends Controller
         $cliente->email = $request->email;
         $cliente->cpf = $request->cpf;
         $cliente->rg = $request->rg;
+        $cliente->datanascimento = $request->datanascimento;
         $cliente->save();
         return redirect('cliente/'.$cliente->id)->with('msg', 'Cliente cadastrado!');
     }
@@ -61,6 +62,7 @@ class ClienteController extends Controller
         $cliente->email = $request->email;
         $cliente->cpf = $request->cpf;
         $cliente->rg = $request->rg;
+        $cliente->datanascimento = $request->datanscimento;
 
         $cliente->update();
 

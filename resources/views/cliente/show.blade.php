@@ -54,7 +54,7 @@
 
                     CPF: {{$cliente->cpf ?? 'Não informado'}} / RG: {{$cliente->rg ?? 'Não informado'}}
 
-                   @if($cliente->datanascimento)
+                   @if($cliente->datanascimento != null)
                    @php 
                     $birthdate = date('Y/m/d', strtotime($cliente->datanascimento)); // data de nascimento
                     $today = new DateTime(); // data atual
