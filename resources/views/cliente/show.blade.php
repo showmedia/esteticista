@@ -61,7 +61,7 @@
 
                     $diff = $today->diff(new DateTime($birthdate));
 
-                    echo '/ '$diff->y . ' Anos';
+                    echo '/ ' . $diff->y . ' Anos';
                     @endphp
                   
                     <br>
