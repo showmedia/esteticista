@@ -332,19 +332,19 @@
 
                 <div class="col-4">
 
-                    <input type="text" class="form-control" required  name="peso" placeholder="Peso" aria-label="Peso">
+                    <input type="text" class="form-control"   name="peso" placeholder="Peso" aria-label="Peso">
 
                 </div>
 
                 <div class="col-4">
 
-                    <input type="text" class="form-control" required  name="altura" placeholder="Altura" aria-label="Altura">
+                    <input type="text" class="form-control"   name="altura" placeholder="Altura" aria-label="Altura">
 
                 </div>
 
                 <div class="col-4">
 
-                    <input type="text" class="form-control" required  name="ideal" placeholder="Peso Ideal" aria-label="Peso Ideal">
+                    <input type="text" class="form-control"   name="ideal" placeholder="Peso Ideal" aria-label="Peso Ideal">
 
                 </div>
 
@@ -390,7 +390,7 @@
 
                     <div class="col-sm-6">
 
-                        <input type="text" required name="ltissular" class="form-control" id="ltissular">
+                        <input type="text"  name="ltissular" class="form-control" id="ltissular">
 
                     </div>
 
@@ -402,7 +402,7 @@
 
                     <div class="col-sm-6">
 
-                        <input type="text" required name="lmuscular" class="form-control" id="lmuscular">
+                        <input type="text"  name="lmuscular" class="form-control" id="lmuscular">
 
                     </div>
 
