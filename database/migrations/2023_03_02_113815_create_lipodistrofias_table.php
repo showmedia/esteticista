@@ -19,9 +19,9 @@ class CreateLipodistrofiasTable extends Migration
             $table->string('distribuicao')->nullable();
             $table->string('localizacao')->nullable();
             $table->string('biotipo')->nullable();
-            $table->double('peso')->default(0);
-            $table->double('altura')->default(0);
-            $table->double('ideal')->default();
+            $table->string('peso')->nullable(0);
+            $table->string('altura')->nullable(0);
+            $table->string('ideal')->nullable();
             $table->timestamps();
         });
     }

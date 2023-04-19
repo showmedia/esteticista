@@ -38,7 +38,7 @@
 
                 <b>Teste de digito pressão: </b> <strong>{{$cliente->anamnese->edema->pressao ? 'POSITIVO' : 'NEGATIVO'}} </strong><br>
 
-                <b>Sensação de Peso | Cansaço: </b> <strong> {{{$cliente->anamnese->edema->sensacao ?? 'Não definido'}}}</strong>
+                <b>Sensação de Peso | Cansaço: </b> <strong> {{$cliente->anamnese->edema->sensacao ?? 'Não definido'}}</strong>
 
             </div>
 
