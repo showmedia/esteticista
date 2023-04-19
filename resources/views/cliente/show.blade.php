@@ -63,6 +63,7 @@
 
                     echo $diff->y . 'Anos';
                     @endphp
+                    {{$diff->y . 'Anos'}}
                     <br>
                    @endif
 
