@@ -280,7 +280,7 @@
 
                 <div class="col-sm-6">
 
-                <input type="text" name="localizacao" required class="form-control" id="localizacao">
+                <input type="text" name="localizacao" class="form-control" id="localizacao">
 
                 </div>
 
