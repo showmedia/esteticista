@@ -27,7 +27,7 @@ class GeralController extends Controller
         $string = '
         Ola, '.$ficha->cliente->name.' tudo bem?
         
-        Acesse o link abaixo para ter acesso a sua ficha Anamnese
+        Acesse o link abaixo para ter acesso a sua ficha de Anamnese
         Data: '. date('d/m/Y', strtotime($ficha->created_at)).' 
         
         https://esteticamarianandrade.com.br/geral/view/'.$ficha->id.'
