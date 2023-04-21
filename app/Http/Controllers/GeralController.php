@@ -20,30 +20,27 @@ class GeralController extends Controller
     
     public function whats($id, Request $request){
         
-         $ficha = Geral::findOrFail($id);
+        $ficha = Geral::findOrFail($id);
         $num = str_replace("(","",$ficha->cliente->telefone);
         $num = str_replace(")","",$num);
         $num = str_replace("-",'',$num);
         $string = '
         Ola, '.$ficha->cliente->name.' tudo bem?
-        
+
         Acesse o link abaixo para ter acesso a sua ficha de Anamnese
         Data: '. date('d/m/Y', strtotime($ficha->created_at)).' 
-        
+
         https://esteticamarianandrade.com.br/geral/view/'.$ficha->id.'
-        
+
         Qualquer duvida, estou a disposição.
-        
+
         Mariana Andrade.
         Agradecemos a preferencia.';
-        
-        $texto = urlencode(utf8_encode($string));
 
         $link = 'https://api.whatsapp.com/send?phone=55'.$num.'&text='. 
-        $texto;
-            
+        urlencode($string);
+
         return redirect()->away($link);
-    
     }
 
     public function assinatura($id, Request $request){
