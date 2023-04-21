@@ -35,7 +35,7 @@ class GeralController extends Controller
         Qualquer duvida, estou a disposição.
 
         Mariana Andrade.
-        Agradecemos a preferencia.';
+        Agradecemos a preferência.';
 
         $link = 'https://api.whatsapp.com/send?phone=55'.$num.'&text='. 
         urlencode($string);
