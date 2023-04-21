@@ -32,7 +32,7 @@ class GeralController extends Controller
         
         https://esteticamarianandrade.com.br/geral/view/'.$ficha->id.'
         
-        Qualquer duvida, estou a disposicao.
+        Qualquer duvida, estou a disposição.
         
         Mariana Andrade.
         Agradecemos a preferencia.';
