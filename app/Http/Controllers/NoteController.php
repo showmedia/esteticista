@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Note;
+use App\Models\Face;
+use App\Models\Anamnese;
 
 class NoteController extends Controller
 {
@@ -12,12 +14,14 @@ class NoteController extends Controller
         $note->description = $request->note;
         if($ts == 1){
             $note->anamneses_id = $id;
+            $anamnese = Anamnese::findOrFail($id);
             $note->save();
-            return redirect('/anamnese/'.$id)->with('msg', 'Anotação adicionada!');
+            return redirect('/anamnese/'.$anamnese->cliente->id)->with('msg', 'Anotação adicionada!');
         }else if($ts == 2){
             $note->faces_id = $id;
+            $facial = Face::findOrFail($id);
             $note->save();
-            return redirect('/facial/'.$id)->with('msg', 'Anotação adicionada!');
+            return redirect('/facial/'.$facial->cliente->id)->with('msg', 'Anotação adicionada!');
 
         }
         
