@@ -29,7 +29,7 @@ class NoteController extends Controller
     public function delete($id){
         $note = Note::findOrFail($id);
         if($note->anamnese){
-            $id = $note->anamnese->id;
+            $id = $note->anamneses_id;
             $this->del($note);
             return redirect('/anamnese/'.$id)->with('msg', 'Anotação excluída!');
         }
