@@ -107,7 +107,11 @@ class AnamneseController extends Controller
     public function addPerimetria($id, Request $request){
         $cliente = Cliente::findOrFail($id);
         $perimetria = new Perimetria;
-        $perimetria->bracod = str_replace(',','.',$request->bracod);
+        if(is_null($request->bracod)){
+            $perimetria->bracod = null;
+        }else{
+            $perimetria->bracod = str_replace(',','.',$request->bracod);
+        }
         $perimetria->bracoe = str_replace(',','.',$request->bracoe);
         $perimetria->abdinf = str_replace(',','.',$request->abdinf);
         $perimetria->abdsup = str_replace(',','.',$request->abdsup);
