@@ -107,23 +107,23 @@ class AnamneseController extends Controller
     public function addPerimetria($id, Request $request){
         $cliente = Cliente::findOrFail($id);
         $perimetria = new Perimetria;
-        if(is_null($request->bracod)){
-            $perimetria->bracod = null;
-        }else{
-            $perimetria->bracod = str_replace(',','.',$request->bracod);
-        }
-        $perimetria->bracoe = str_replace(',','.',$request->bracoe);
-        $perimetria->abdinf = str_replace(',','.',$request->abdinf);
-        $perimetria->abdsup = str_replace(',','.',$request->abdsup);
-        $perimetria->cintura = str_replace(',','.',$request->cintura);
-        $perimetria->quadril = str_replace(',','.',$request->quadril);
-        $perimetria->coxainfe = str_replace(',','.',$request->coxainfesquerda);
-        $perimetria->coxainfd = str_replace(',','.',$request->coxainfdireita);
-        $perimetria->coxasupd = str_replace(',','.',$request->coxasupdireita);
-        $perimetria->coxasupe = str_replace(',','.',$request->coxasupesquerda);
-        $perimetria->joelhod = str_replace(',','.',$request->joelhodireito);
-        $perimetria->joelhoe = str_replace(',','.',$request->joelhoesquerdo);
-        $perimetria->anamneses_id = $cliente->anamnese->id;
+        
+        $campos = [
+            'bracod', 'bracoe', 'abdinf', 'abdsup', 'cintura', 'quadril',
+            'coxainfe', 'coxainfd', 'coxasupd', 'coxasupe', 'joelhod', 'joelhoe'
+          ];
+          
+          // Loop pelos campos e aplica a lógica de tratamento de nulos e substituição de vírgula por ponto
+          foreach ($campos as $campo) {
+            if (is_null($request->$campo)) {
+              $perimetria->$campo = null;
+            } else {
+              $perimetria->$campo = str_replace(',', '.', $request->$campo);
+            }
+          }
+          
+          // Define o ID da anamnese relacionada à perimetria
+          $perimetria->anamneses_id = $cliente->anamnese->id;
 
         $perimetria->save();
 
