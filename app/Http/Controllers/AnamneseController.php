@@ -147,7 +147,7 @@ class AnamneseController extends Controller
           }
 
         $perimetria->update();
-        return redirect('/anamnese/'.$perimetria->anamnese->id)->with('msg', 'Perimetria alterada!');
+        return redirect('/anamnese/'.$perimetria->anamnese->cliente->id)->with('msg', 'Perimetria alterada!');
     }
     public function addAdipometria($id, Request $request){
         $cliente = Cliente::findOrFail($id);
@@ -156,13 +156,13 @@ class AnamneseController extends Controller
         $adipometria->prega = str_replace(',','.',$request->prega);
         $adipometria->anamneses_id = $cliente->anamnese->id;
         $adipometria->save();
-        return redirect('/anamnese/'.$cliente->anamnese->id)->with('msg', 'Adipometria adicionada');
+        return redirect('/anamnese/'.$cliente->anamnese->cliente->id)->with('msg', 'Adipometria adicionada');
     }
     public function updateAdipometria($id, Request $request){
         $adipometria = Adipometria::findOrFail($id);
         $adipometria->regiao = $request->regiao;
         $adipometria->prega = str_replace(',','.',$request->prega);
         $adipometria->update();
-        return redirect('/anamnese/'.$adipometria->anamnese->id)->with('msg', 'Alteração Salva');
+        return redirect('/anamnese/'.$adipometria->anamnese->cliente->id)->with('msg', 'Alteração Salva');
     }
 }
