@@ -11,6 +11,6 @@ class Perimetria extends Model
     use HasFactory;
 
     public function anamnese() {
-        return $this->belongsTo('App\Models\anamnese', 'anamneses_id');
+        return $this->belongsTo('App\Models\Anamnese', 'anamneses_id');
     }
 }
