@@ -86,7 +86,7 @@
 
                 <div style="margin-top: 10px; text-align:center;">
 
-                    <button class="btn btn-sm btn-primary anotation" data-bs-toggle="modal" data-bs-target="#listnotes"><ion-icon name="pencil-outline"></ion-icon> Anotações <span class="number">{{count($cliente->facial->notes)}}</span></button>
+                    <button class="btn btn-sm btn-primary anotation" data-bs-toggle="modal" data-bs-target="#listnotes2"><ion-icon name="pencil-outline"></ion-icon> Anotações <span class="number">{{count($cliente->facial->notes)}}</span></button>
 
                     <a href="/facial/edit/{{$cliente->id}}" style="margin-left:10px;" class="btn btn-sm btn-success">Editar Ficha</a>
 
